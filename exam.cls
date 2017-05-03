@@ -2410,7 +2410,7 @@
 %   \edef\q@object@label{%
 %     question\arabic{question}@object\arabic{ques@object}}%
 %   \PgInfo@write{\q@object@label}%
-  \PgInfo@write{question\arabic{question}@object\arabic{ques@object}}%
+\PgInfo@write{\arabic{section}@\arabic{subsection}@\arabic{subsubsection}@question\arabic{question}@object\arabic{ques@object}}%
 }% first@questionobject
 
 % \addquestionobject will be used by each part, subpart, and
@@ -2423,7 +2423,7 @@
 %   \edef\q@object@label{%
 %     question\arabic{question}@object\arabic{ques@object}}%
 %   \PgInfo@write{\q@object@label}%
-  \PgInfo@write{question\arabic{question}@object\arabic{ques@object}}%
+\PgInfo@write{\arabic{section}@\arabic{subsection}@\arabic{subsubsection}@question\arabic{question}@object\arabic{ques@object}}%
 }% addquestionobject
 
 % \questionobject@pluspagecheck will be used by each choice, as well
@@ -2449,7 +2449,7 @@
   \addtocounter{ques@object}{1}%
   % We need the edef because we check the page of \q@object@label:
   \edef\q@object@label{%
-    question\arabic{question}@object\arabic{ques@object}}%
+\arabic{section}@\arabic{subsection}@\arabic{subsubsection}@question\arabic{question}@object\arabic{ques@object}}%
   \PgInfo@write{\q@object@label}%
   \set@counter@to@pageof{Curr@Page}{\q@object@label}%
   \expandafter\ifx\csname Contin@\theCurr@Page\endcsname\relax
@@ -2568,7 +2568,7 @@
     % horizontal mode by \everypar, and so any blank lines will
     % cause paragraph breaks. 
     \pageinfo@commands={%
-      \edef\@queslabel{question@\arabic{question}}%
+      \edef\@queslabel{\arabic{section}@\arabic{subsection}@\arabic{subsubsection}@question@\arabic{question}}%
       \PgInfo@write{\@queslabel}%
       \first@questionobject
       % In addition to the \PgInfo@write we use an actual \label
@@ -2648,7 +2648,7 @@
       % horizontal mode by \everypar, and so any blank lines will
       % cause paragraph breaks. 
       \temp@toks={%
-        \edef\@subpartlabel{subpart@\arabic{question}%
+        \edef\@subpartlabel{\arabic{section}@\arabic{subsection}@\arabic{subsubsection}@subpart@\arabic{question}%
           @\arabic{partno}@\arabic{subpart}}%
         \PgInfo@write{\@subpartlabel}%
         \addquestionobject
@@ -2719,7 +2719,7 @@
       % horizontal mode by \everypar, and so any blank lines will
       % cause paragraph breaks. 
       \temp@toks={%
-        \edef\@subsubpartlabel{subsubpart@\arabic{question}%
+    \edef\@subsubpartlabel{\arabic{section}@\arabic{subsection}@\arabic{subsubsection}@subsubpart@\arabic{question}%
           @\arabic{partno}@\arabic{subpart}@\arabic{subsubpart}}%
         \PgInfo@write{\@subsubpartlabel}%
         \addquestionobject
@@ -2895,7 +2895,7 @@
       % horizontal mode by \everypar, and so any blank lines will
       % cause paragraph breaks. 
       \temp@toks={%
-        \edef\@partlabel{part@\arabic{question}@\arabic{partno}}%
+\edef\@partlabel{\arabic{section}@\arabic{subsection}@\arabic{subsubsection}@part@\arabic{question}@\arabic{partno}}%
         \PgInfo@write{\@partlabel}%
         \addquestionobject
         % In addition to the \PgInfo@write we use an actual \label
